@@ -9,13 +9,17 @@ def button_logic():
     utime.sleep(1.5)
     relay_switch.value(0)
 
-while True:
-    if invertor_button.value() == 1:
-        button_logic()
-        while True:
-            if invertor_button.value() == 0:
-                button_logic()
-                break 
+def push_status():
+    while True:
+        if invertor_button.value() == 1:
+            button_logic()
+            while True:
+                if invertor_button.value() == 0:
+                    button_logic()
+                    break 
+
+if __name__ == '__main__':
+    push_status()
         
 
         
