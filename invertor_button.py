@@ -12,11 +12,13 @@ def button_logic():
 def push_status():
     while True:
         if invertor_button.value() == 1:
-            button_logic()
-            while True:
-                if invertor_button.value() == 0:
-                    button_logic()
-                    break 
+            utime.sleep_ms(250)
+            if invertor_button.value() == 1:
+                button_logic()
+                while True:
+                    if invertor_button.value() == 0:
+                        button_logic()
+                        break
 
 if __name__ == '__main__':
     push_status()
