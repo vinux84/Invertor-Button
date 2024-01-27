@@ -1,8 +1,8 @@
 import machine
 import utime
 
-invertor_button = machine.Pin(14, machine.Pin.IN, machine.Pin.PULL_DOWN)
-relay_switch = machine.Pin(28, machine.Pin.OUT) 
+invertor_button = machine.Pin(10, machine.Pin.IN, machine.Pin.PULL_DOWN) # for step-down convertor: ground on pin 18
+relay_switch = machine.Pin(16, machine.Pin.OUT) # for relay: ground on pin 38, 3.3v(out) on pin 36
 
 def button_logic():
     relay_switch.value(1)
