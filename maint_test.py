@@ -17,11 +17,8 @@ def button_handler(pin):
     presses +=1
     utime.sleep_ms(250)
     invertor_button.irq(trigger=machine.Pin.IRQ_RISING | machine.Pin.IRQ_FALLING, handler=button_handler)
-    if pressed == 1:
+    if presses == 1:
       button_logic()
-    else:
-      button_logic()
-      pressed = False
       
 invertor_button.irq(trigger=machine.Pin.IRQ_RISING | machine.Pin.IRQ_FALLING, handler=button_handler)
 
