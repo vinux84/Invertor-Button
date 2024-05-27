@@ -15,7 +15,7 @@ def on_button_handler(pin):
     global pressed
     invertor_button.irq(handler=None)
     utime.sleep_ms(250)
-    invertor_button.irq(trigger=machine.Pin.IRQ_RISING, handler=button_handler)
+    invertor_button.irq(trigger=machine.Pin.IRQ_RISING, handler=on_button_handler)
     if pressed == False:
       button_logic()
       pressed = True
@@ -24,7 +24,7 @@ def off_button_handler(pin):
     global pressed
     invertor_button.irq(handler=None)
     utime.sleep_ms(250)
-    invertor_button.irq(trigger=machine.Pin.IRQ_FALLING, handler=button_handler)
+    invertor_button.irq(trigger=machine.Pin.IRQ_FALLING, handler=off_button_handler)
     if pressed == True:
       button_logic()
       pressed = False
